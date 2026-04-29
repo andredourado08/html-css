@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <form action="" method="get">
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+            <p>
+                <label for="inome">nome:</label>
+                <input type="text" id="inome" name="nome" required>
+            </p>
+            <p>
+                <label for="iemail">Email:</label>
+                <input
+                type="email"
+                name="email"
+                placeholder="seuemail@gmail.com"
+                pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$"
+                required>
+            </p>
+            <p>
+                <label for="Itelefone">Telefone:</label>
+                <input
+                  type="tel"
+                  name="telefone"
+                  placeholder="(17) 99999-9999"
+                  pattern="^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$"
+                  required>
+            </p>
+        </fieldset>
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </p>
+    </form>
+</body>
+</html>
