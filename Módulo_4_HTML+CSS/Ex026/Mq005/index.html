@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Media Querie</title>
     <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="estilos/mediaquerie.css">
 </head>
-<body>
+<body onresize="mudouTamanho()">
     <header>
         <h1>Meu site</h1>
 
@@ -48,7 +49,15 @@
             </p>
         </article>
     </main>
-    <script>
+    <script> 
+           function mudouTamanho(){
+            if(window.innerWidth >= 768) {
+                itens.style.display='block'
+        } else {
+            itens.style.display='none'
+        }
+    }
+
         function clickMenu(){
            if(itens.style.display == 'block'){
                 itens.style.display = 'none'
@@ -57,6 +66,7 @@
             itens.style.display='block'
            }
         }
+
     </script>
 </body>
 </html>
