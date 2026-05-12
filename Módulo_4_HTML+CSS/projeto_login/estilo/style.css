@@ -1,0 +1,175 @@
+@charset "UTF-8";
+
+/*
+Paleta de cores
+Vermelho claro: #BF2C38
+Vinho:#400101 
+Vermelho um pouco escuro:#8C1616
+branco meio cinza: #F2F2F2
+Preto: #0D0D0D
+*/
+
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #BF2C38;
+    height: 100vh;
+    width: 100vw;
+}
+
+main {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* ======== CARD DE LOGIN ======== */
+section#login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #F2F2F2;
+    width: 260px;
+    height: auto;
+    min-height: 480px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+    transition: width 0.5s, height 0.5s;
+    transition-timing-function: ease;
+}
+
+/* ======== IMAGEM ======== */
+section#login > div#imagem {
+    background: #BF2C38 url(../imagens/vindar.jpg) no-repeat center center;
+    background-size: cover;
+    height: 180px;
+    display: block;
+}
+
+/* ======== FORMULÁRIO ======== */
+section#login > div#formulario {
+    padding: 15px;
+    display: block;
+}
+
+div#formulario > h1 {
+    text-align: center;
+    margin-bottom: 8px;
+    color: #400101;
+    font-size: 1.6em;
+}
+
+div#formulario > p {
+    font-size: 0.85em;
+    text-align: center;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+/* ======== CAMPOS DE INPUT ======== */
+form > div.campo {
+    background-color: #b41a1a;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 42px;
+    border-radius: 8px;
+    margin: 8px 0px;
+    border: 2px solid #b41a1a;
+    transition: border-color 0.3s;
+}
+
+form > div.campo:focus-within {
+    border-color: #400101;
+}
+
+div.campo > label {
+    display: none;
+}
+
+/* Ícone na ESQUERDA no mobile */
+div.campo > span.material-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 100%;
+    background-color: #F2F2F2;
+    border-radius: 6px 0 0 6px;
+    flex-shrink: 0;
+}
+
+div.campo > span.material-icons svg {
+    fill: #8C1616;
+}
+
+div.campo > input {
+    background-color: #ffffff;
+    font-size: 1em;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0 6px 6px 0;
+    padding: 0 10px;
+    outline: none;
+    color: #333;
+}
+
+div.campo > input::placeholder {
+    color: #999;
+}
+
+/* ======== BOTÃO ENTRAR ======== */
+form > input[type=submit] {
+    display: block;
+    font-size: 1em;
+    width: 100%;
+    height: 42px;
+    border-radius: 8px;
+    background-color: #8C1616;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 12px;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+form > input[type=submit]:hover {
+    background-color: #BF2C38;
+}
+
+form > input[type=submit]:active {
+    transform: scale(0.98);
+}
+
+/* ======== BOTÃO ESQUECI SENHA ======== */
+form > a.botao {
+    display: block;
+    text-align: center;
+    font-size: 0.95em;
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    margin-top: 8px;
+    background-color: transparent;
+    color: #8C1616;
+    border: 2px solid #8C1616;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+form > a.botao:hover {
+    background-color: #8C1616;
+    color: white;
+}

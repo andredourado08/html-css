@@ -1,0 +1,116 @@
+@charset "UTF-8";
+
+/*
+Paleta de cores
+Vermelho claro: #BF2C38
+Vinho:#400101 
+Vermelho um pouco escuro:#8C1616
+branco meio cinza: #F2F2F2
+Preto: #0D0D0D
+*/
+
+/* ======== TABLET ======== */
+@media screen and (min-width: 768px) and (max-width: 992px) { 
+    body {
+        background-image: linear-gradient(to top, #400101, #BF2C38);
+    }
+
+    section#login {
+        width: 85vw;
+        height: 320px;
+    }
+
+    section#login > div#imagem {
+        float: left;
+        width: 35%;
+        height: 100%;
+    }
+
+    section#login > div#formulario {
+        float: right;
+        width: 65%;
+        padding: 20px;
+    }
+
+    div#formulario > h1 {
+        font-size: 1.8em;
+        text-align: left;
+    }
+
+    div#formulario > p {
+        text-align: left;
+        font-size: 0.9em;
+    }
+
+    /* Ícone na DIREITA no tablet/desktop */
+    div.campo > span.material-icons {
+        order: 2;
+        border-radius: 0 6px 6px 0;
+    }
+
+    div.campo > input {
+        border-radius: 6px 0 0 6px;
+    }
+
+    form > div.campo {
+        flex-direction: row-reverse;
+    }
+
+    div.campo > label {
+        display: none;
+    }
+}
+
+/* ======== DESKTOP ======== */
+@media screen and (min-width: 992px) {
+
+    body {
+        background-image: linear-gradient(to top, #400101, #BF2C38);
+    }
+
+    section#login {
+        width: 900px;
+        height: 360px;
+    }
+
+    section#login > div#imagem {
+        float: left;
+        width: 45%;
+        height: 100%;
+    }
+
+    section#login > div#formulario {
+        float: right;
+        width: 55%;
+        padding: 25px;
+    }
+
+    div#formulario > h1 {
+        font-size: 2em;
+        text-align: left;
+    }
+
+    div#formulario > p {
+        text-align: left;
+        font-size: 0.95em;
+        margin-bottom: 20px;
+    }
+
+    /* Ícone na DIREITA no desktop */
+    div.campo > span.material-icons {
+        order: 2;
+        border-radius: 0 6px 6px 0;
+    }
+
+    div.campo > input {
+        border-radius: 6px 0 0 6px;
+    }
+
+    form > div.campo {
+        flex-direction: row-reverse;
+    }
+
+    div.campo > label {
+        display: none;
+    }
+}
