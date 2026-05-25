@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabela de Notas Escolares</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+      background: #f4f7fc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 20px;
+    }
+
+    .tabela-container {
+      max-width: 1000px;
+      width: 100%;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      padding: 20px;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      font-size: 1rem;
+      background: white;
+    }
+
+    th, td {
+      padding: 14px 16px;
+      vertical-align: middle;
+      border-bottom: 1px solid #e6edf4;
+    }
+
+    thead tr {
+      background: #1e3a5f; /* azul escuro elegante */
+      color: white;
+    }
+
+    thead th {
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      text-align: center;
+      border-bottom: 2px solid #2b4c73;
+    }
+
+    /* Alinhamentos padrão */
+    td:first-child, th:first-child {
+      text-align: left;
+      font-weight: 500;
+    }
+
+    td:nth-child(2) {
+      text-align: left;
+    }
+
+    /* Notas e médias alinhadas à direita */
+    td:nth-child(3), td:nth-child(4), td:nth-child(5),
+    th:nth-child(3), th:nth-child(4), th:nth-child(5) {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Cabeçalho do corpo — áreas em destaque */
+    tbody th {
+      background-color: #f0f6ff;
+      font-weight: 700;
+      color: #0b2b4a;
+      border-right: 2px solid #d0e0f0;
+    }
+
+    /* Linhas de média (Exatas/Humanas/Geral) */
+    tbody tr.linha-media th {
+      background-color: #eef3fa;
+      font-weight: 600;
+      color: #1e3a5f;
+      border-right: 1px solid #cbd6e4;
+    }
+
+    tbody tr.linha-media td {
+      background-color: #f9fcff;
+      font-weight: 500;
+    }
+
+    /* Zebrado suave nas disciplinas */
+    tbody tr:not(.linha-media):nth-child(even) {
+      background-color: #fafcff;
+    }
+
+    tbody tr:hover {
+      background-color: #e3f0fd;
+      transition: 0.15s;
+    }
+
+    /* Última linha (média geral) com destaque sutil */
+    tbody tr:last-child {
+      border-top: 2px solid #bdd3e8;
+    }
+
+    tbody tr:last-child th,
+    tbody tr:last-child td {
+      background-color: #e6eff9;
+      font-weight: 600;
+    }
+
+    /* Ajustes para colunas vazias */
+    td:empty::before {
+      content: "—";
+      color: #9aaebb;
+      font-weight: 300;
+    }
+
+    /* Responsividade extra */
+    @media (max-width: 600px) {
+      th, td {
+        padding: 10px 8px;
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Pequeno detalhe: notas com zero formatadas */
+    td:nth-child(3), td:nth-child(4), td:nth-child(5) {
+      font-weight: 500;
+      color: #1f3a4e;
+    }
+
+    /* Bordas laterais suaves */
+    th:first-child, td:first-child {
+      border-left: none;
+    }
+  </style>
+</head>
+<body>
+<div class="tabela-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Área</th>
+        <th>Disciplinas</th>
+        <th colspan="2">Notas</th>
+        <th>Média</th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th>Nota 1</th>
+        <th>Nota 2</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- ========== BLOCO EXATAS ========= -->
+      <!-- Matemática (primeira disciplina, área "Exatas" com rowspan) -->
+      <tr>
+        <th rowspan="4" scope="rowgroup">Exatas</th>
+        <td>Matemática</td>
+        <td>0.0</td>
+        <td>0.0</td>
+        <td>0.0</td>
+      </tr>
+      <tr>
+        <td>Física</td>
+        <td>0.0</td>
+        <td>0.0</td>
+        <td>0.0</td>
+      </tr>
+      <tr>
+        <td>Química</td>
+        <td>0.0</td>
+        <td>0.0</td>
+        <td>0.0</td>
+      </tr>
+      <tr>
+        <td>Biologia</td>
+        <td>0.0</td>
+        <td>0.0</td>
+        <td>0.0</td>
+      </tr>
+      <!-- Média de Exatas -->
+      <tr class="linha-media">
+        <th scope="row">Média de Exatas</th>
+        <td></td>   <!-- vazio, aparecerá "—" via CSS -->
+        <td></td>
+        <td></td>
+        <td>0.0</td>
+      </tr>
+
+      <!-- ========== BLOCO HUMANAS ========= -->
+      <tr>
+        <th rowspan="2" scope="rowgroup">Humanas</th>
+        <td>História</td>
+        <td>0.0</td>
+        <td>0.0</td>
+        <td>0.0</td>
+      </tr>
+      <tr>
+        <td>Geografia</td>
+        <td>0.0</td>
+        <td>0.0</td>
+        <td>0.0</td>
+      </tr>
+      <!-- Média de Humanas -->
+      <tr class="linha-media">
+        <th scope="row">Média de Humanas</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>0.0</td>
+      </tr>
+
+      <!-- ========== LINHA EXTRA (MÉDIA GERAL) ========= -->
+      <!-- Conforme a tabela original há uma última linha apenas com 0.0 na coluna Média.
+           Para manter fidelidade e clareza, rotulamos como "Média Geral". -->
+      <tr>
+        <th scope="row">Média Geral</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>0.0</td>
+      </tr>
+    </tbody>
+  </table>
+  <div style="margin-top: 16px; font-size: 0.85rem; color: #4a627a; text-align: right; opacity: 0.8;">
+    ⚬ Notas e médias iniciais zeradas — prontas para edição.
+  </div>
+</div>
+</body>
+</html>
