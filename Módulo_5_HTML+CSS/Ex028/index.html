@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicios de Grid Layout</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background-color: #f1f3f5;
+            color: #222;
+            padding: 30px;
+        }
+
+        main{
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h1{
+            margin-bottom: 10px;
+        }
+
+        p{
+            margin-bottom: 25px;
+            line-height: 1.5em;
+        }
+
+        nav{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+        }
+
+        a{
+            background-color: white;
+            color: #222;
+            border: 1px solid #adb5bd;
+            border-radius: 6px;
+            padding: 18px;
+            text-decoration: none;
+        }
+
+        a:hover{
+            background-color: #e7f5ff;
+            border-color: #339af0;
+        }
+
+        strong{
+            display: block;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Exercicios de Grid Layout</h1>
+        <p>Abra cada exemplo e altere os valores do CSS para testar como o Grid organiza linhas, colunas, espacos e areas.</p>
+
+        <nav>
+            <a href="grid001/index.html">
+                <strong>grid001</strong>
+                Colunas, linhas e gap
+            </a>
+            <a href="grid002/index.html">
+                <strong>grid002</strong>
+                repeat(), fr e grid responsivo
+            </a>
+            <a href="grid003/index.html">
+                <strong>grid003</strong>
+                Layout com grid-template-areas
+            </a>
+            <a href="grid004/index.html">
+                <strong>grid004</strong>
+                Itens ocupando mais linhas e colunas
+            </a>
+            <a href="grid005/index.html">
+                <strong>grid005</strong>
+                Alinhamento com Grid
+            </a>
+        </nav>
+    </main>
+</body>
+</html>

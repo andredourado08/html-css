@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout 003</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background-color: #dee2e6;
+        }
+
+        div.container{
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            grid-template-rows: 80px 1fr 60px;
+            grid-template-areas:
+                "cabecalho cabecalho"
+                "menu conteudo"
+                "rodape rodape";
+        }
+
+        header{
+            grid-area: cabecalho;
+            background-color: lightcoral;
+            padding: 20px;
+        }
+
+        nav{
+            grid-area: menu;
+            background-color: lightblue;
+            padding: 20px;
+        }
+
+        main{
+            grid-area: conteudo;
+            background-color: white;
+            padding: 20px;
+        }
+
+        footer{
+            grid-area: rodape;
+            background-color: lightgreen;
+            padding: 20px;
+            text-align: center;
+        }
+
+        @media (max-width: 650px){
+            div.container{
+                grid-template-columns: 1fr;
+                grid-template-rows: 80px auto 1fr 60px;
+                grid-template-areas:
+                    "cabecalho"
+                    "menu"
+                    "conteudo"
+                    "rodape";
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Meu site</h1>
+        </header>
+
+        <nav>
+            <p>Menu</p>
+            <p>Inicio</p>
+            <p>Produtos</p>
+            <p>Contato</p>
+        </nav>
+
+        <main>
+            <h2>Conteudo principal</h2>
+            <p>Este exemplo usa grid-template-areas para montar uma pagina com cabecalho, menu lateral, conteudo e rodape.</p>
+        </main>
+
+        <footer>
+            <p>Rodape</p>
+        </footer>
+    </div>
+</body>
+</html>
